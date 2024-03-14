@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>Menu with CSS </title>
+		
+		<link rel="stylesheet" href="css/css.css" />
+		<script type="text/javascript" src="js/java.js"></script>
+		
+		<style>
+			ul{
+				font-family: Perpetua;
+				list-style-type:none;
+				background-color:#009DDC;
+				font-color:#ffffff;
+				height:46px;
+				overflow:hidden;
+			}
+
+			li{
+				float:left;
+			}
+
+			li a, .drp{
+				  display: inline-block;
+				  color:black;
+				  text-align: center;
+				  padding: 14px 110px;
+				  text-decoration:none;  
+			}
+
+			li .menu-item{
+				display:inline-block;
+				font-color:#ffffff;
+			}
+
+			.menu-content{
+				display:none;
+				position:absolute;
+				background-color:#f8f8f8;
+				z-index:1;
+				font-color:#ffffff;	
+			}
+
+			.menu-content a:hover{
+			  font-family: Perpetua;
+			  background-color:#003767;
+			  font-color:#ffffff;
+			  color: white;
+			  text-decoration: none;
+			  display: block;
+			 
+			}
+			
+			.menu-item:hover .menu-content{
+				display:block;
+			}
+
+			.menu-item:hover{
+				display:block;
+				color: white;
+				background-color: #003767;	
+			}
+
+			h1{
+				color:#003767;
+				font-family:perpetua;
+			}
+			
+			
+		</style>
+	</head>
+
+
+	<body bgcolor="white">
+	
+	<?php include("demo_db_connection.php");?>
+		<br><br><br>
+	<div class="shoppingcart"><img src= "images/cart.png" width="100%" onclick="showcart()" />  </div>
+	<div class="mycart" id="cart" style="display:none;">  </div>
+
+
+	<center>
+	<img src= "images/logo1.png" align="center" width="30%" /> <br>
+	</center>
+	<h1 align="center"> Online Book Store </h1>
+	
+	
+	<ul>
+		<li class="menu-item"><a href="#" class="drp">Books </a>
+			<div class="menu-content">
+				<a  href="add_book.php">Add Book</a><br>
+				<a  href="remove_book.php">Remove Book</a><br>
+				<a href="display_books.php">Display all Books</a><br>
+			</div>
+		
+		</li>
+		
+		<li class="menu-item"><a href="#" class="drp">Merch </a>
+		<div class="menu-content">
+			<a  href="add_merch.php">Add Merch</a><br>
+			<a  href="remove_merch.php">Remove Merch</a><br>
+			<a  href="display_merch.php">Display all Merch</a><br>
+		</div>
+		
+		</li>
+		
+
+		<li class="menu-item"><a href="#" class="drp">Notebooks </a>	
+		<div class="menu-content">
+			<a href="add_notebooks.php">Add Notebooks</a><br>
+			<a href="remove_notebooks.php">Remove Notebooks</a><br>
+			<a href="display_notebooks.php">Display all Notebooks</a><br>
+		</div>
+		</li>		
+
+		<li class="menu-item"><a href="#" class="drp"> Tech </a>	
+		<div class="menu-content">
+			<a href="add_tech.php">Add Tech</a><br>
+			<a href="remove_tech.php">Remove Tech</a><br>
+			<a href="display_tech.php">Display all Tech</a><br>
+		</div>
+		</li>
+
+		<li class="menu-item"><a href="#" class="drp">Users </a>	
+		<div class="menu-content">
+			<a href="add_user.php">Add User</a><br>
+			<a href="remove_user.php">Remove User</a><br>
+			<a href="display_users.php">Display all Users</a><br>
+		</div>
+		</li>
+
+
+
+	</ul>
+	<p align="center"> Welcome to JBU's Online Book store - open for faculty/staff and students!<p>
+	<br>
+	
+
+
+	
+	<table align="center">
+		<tr><td align = "center"> 
+			<a href = "javascript:void(0)" onclick ="popupfunction('1')" class =link>
+			<img src= "images/crowley.png" width="40%" /><br> Good Omens 
+			</a>
+			<br><br><button onclick="addtocart("Good Omens")"> Add to cart </button><br>
+		    </td>
+			<div id="popup1" class="white_content">
+			<p align="center"><br><br>
+				<img src= "images/crowley.png" width=40% /><br>Good Omens<br>Price=$20<br>
+				<a href = "javascript:void(0)" onclick="popupclose('1')" class=linktext>close window</a>
+				</p>
+			</div>
+			<div id="fade1" class="black_content"></div>
+
+
+
+
+
+		     <td align = "center"> 
+			<a href = "javascript:void(0)" onclick ="popupfunction('2')" class =link>
+			<img src= "images/TheScrewtapeLetters.png" width="40%" /><br> The Screwtape Letters
+			</a>
+			<br><br><button onclick="addtocart("The Screwtape Letters")"> Add to cart </button><br>
+		     </td>
+			<div id="popup2" class="white_content">
+			<p align="center"><br><br>
+				<img src= "images/TheScrewtapeLetters.png" width=30% /><br> The Screwtape Letters <br>Price=$10<br>
+				<a href = "javascript:void(0)" onclick="popupclose('2')" class=linktext>close window</a>
+				</p>
+			</div>
+			<div id="fade2" class="black_content"></div>
+
+
+
+
+		     <td align = "center"> 
+			<a href = "javascript:void(0)" onclick ="popupfunction('3')" class =link>
+			<img src= "images/coraline.png" width="35%" /><br> Coraline
+			</a>
+			<br><br><button onclick="addtocart("Coraline")"> Add to cart </button><br>
+		     </td>
+			<div id="popup3" class="white_content">
+			<p align="center"><br><br>
+				<img src= "images/coraline.png" width=30% /><br>Coraline<br>Price=$10<br>
+				<a href = "javascript:void(0)" onclick="popupclose('3')" class=linktext>close window</a>
+				</p>
+			</div>
+			<div id="fade3" class="black_content"></div>
+
+
+
+		     <td align = "center"> 
+			<a href = "javascript:void(0)" onclick ="popupfunction('4')" class =link>
+			<img src= "images/GOScript.png" width="30%" /><br> Good Omens Script Book
+			</a>
+			<br><br><button onclick="addtocart("Good Omens Script Book")"> Add to cart </button><br>
+		     </td>
+			<div id="popup4" class="white_content">
+			<p align="center"><br><br>
+				<img src= "images/GOScript.png" width=30% /><br>Good Omens Script Book<br>Price=$10<br>
+				<a href = "javascript:void(0)" onclick="popupclose('4')" class=linktext>close window</a>
+				</p>
+			</div>
+			<div id="fade4" class="black_content"></div>
+
+
+
+
+
+
+		     <td align = "center"> 
+			<a href = "javascript:void(0)" onclick ="popupfunction('5')" class =link>
+			<img src= "images/Inferno.png" width="30%" /><br> Dante's Inferno
+			</a>
+			<br><br><button onclick="addtocart("Dante's Inferno")"> Add to cart </button><br>
+		     </td>
+			<div id="popup5" class="white_content">
+			<p align="center"><br><br>
+				<img src= "images/Inferno.png" width=30% /><br>Dante's Inferno<br>Price=$10<br>
+				<a href = "javascript:void(0)" onclick="popupclose('5')" class=linktext>close window</a>
+				</p>
+			</div>
+			<div id="fade5" class="black_content"></div>
+
+
+
+
+
+
+
+
+		</tr>
+
+		
+	</table>
+
+	
+
+		</center>
+	</body>
+</html>
+
+
+
